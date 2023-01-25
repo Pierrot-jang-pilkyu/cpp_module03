@@ -6,14 +6,13 @@ ClapTrap::ClapTrap(void)
 	this->hp = 10;
 	this->ep = 10;
 	this->ad = 0;
-	std::cout << "Default constructor called.\n";
+	std::cout << "ClapTrap default constructor called.\n";
 }
-
 
 ClapTrap::ClapTrap(const ClapTrap &_ct)
 {
 	*this = _ct;
-	std::cout << "Copy constructor called.\n";
+	std::cout << "ClapTrap copy constructor called.\n";
 }
 
 ClapTrap::ClapTrap(std::string _name)
@@ -22,12 +21,12 @@ ClapTrap::ClapTrap(std::string _name)
 	this->hp = 10;
 	this->ep = 10;
 	this->ad = 0;
-	std::cout << _name << " constructor called.\n";
+	std::cout << "ClapTrap " << _name << " constructor called.\n";
 }
 
 ClapTrap::~ClapTrap(void)
 {
-	std::cout << "destructor called.\n";
+	std::cout << "ClapTrap destructor called.\n";
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &_ct)
@@ -51,9 +50,9 @@ void	ClapTrap::attack(const std::string& target)
 	else
 	{
 		if (this->ep <= 0)
-			std::cout << "Energy points is zero.\n";
+			std::cout << "ClapTrap energy points is zero.\n";
 		if (this->hp <= 0)
-			std::cout << "Already dead. Hit point is zero or minus.\n";
+			std::cout << "ClapTrap already dead. Hit point is zero or minus.\n";
 	}
 }
 
@@ -61,7 +60,7 @@ void	ClapTrap::takeDamage(unsigned int amount)
 {
 	if (this->hp > 0 && this->ep > 0)
 	{
-		this->hp -= (int)amount;
+		this->hp -= amount;
 		this->ep--;
 		std::cout << "ClapTrap " << this->name << " take Damage " << amount << " hit points!\n";
 		std::cout << "ClapTrap " << this->name << " now hit points " << this->hp << "\n";
@@ -80,7 +79,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 {
 	if (this->hp > 0 && this->ep > 0)
 	{
-		this->hp += (int)amount;
+		this->hp += amount;
 		this->ep--;
 		std::cout << "ClapTrap " << this->name << " be repaired " << amount << " hit points!\n";
 		std::cout << "ClapTrap " << this->name << " now hit points " << this->hp << "\n";

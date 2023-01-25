@@ -1,8 +1,13 @@
-NAME	=	ex00
-CLANG	=	clang++
-CFLAGS	=	-Wall -Wextra -Werror -std=c++98 -pedantic
+NAME	=	ex03
+CLANG	=	g++
+#CFLAGS	=	-Wall -Wextra -Werror -std=c++98 -pedantic
+CFLAGS	=	-Wall -Wextra -Werror
 
-SRCS	= 	./main.cpp 
+SRCS	= 	./main.cpp \
+			./ClapTrap.cpp \
+			./FragTrap.cpp \
+			./ScavTrap.cpp \
+			./DiamondTrap.cpp
 
 OBJS	= $(SRCS:.cpp=.o)
 RM		= rm -f
